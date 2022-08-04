@@ -51,6 +51,7 @@
 <!--          NB: There are follow-come recipes, you have to turn them on, and you can create and add your own-->
           <activeRecipes>
             <recipe>org.openrewrite.java.format.AutoFormat</recipe>
+<!--            <recipe>com.chrisworks.practicecoderewrite.v1_0.contr</recipe> I don't want this behaviour for now-->
           </activeRecipes>
 <!--          NB: There are follow-come styles, you have to activate them here and can write your own and include it-->
           <activeStyles>

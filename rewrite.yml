@@ -1,0 +1,7 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.chrisworks.practicecoderewrite.v1_0.contr
+recipeList:
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: com.chrisworks.practicecoderewrite.v1_0.controllers
+      newPackageName: com.chrisworks.practicecoderewrite.v1_0.contr
