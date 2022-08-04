@@ -40,6 +40,25 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
+
+<!--      1. Introduce the open re-write plugin -->
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>4.30.0</version>
+<!--        2. Activate Recipes and/formats: This is -->
+        <configuration>
+<!--          NB: There are follow-come recipes, you have to turn them on, and you can create and add your own-->
+          <activeRecipes>
+            <recipe>org.openrewrite.java.format.AutoFormat</recipe>
+          </activeRecipes>
+<!--          NB: There are follow-come styles, you have to activate them here and can write your own and include it-->
+          <activeStyles>
+            <style>com.netflix.eureka.Style</style>
+          </activeStyles>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
 

@@ -13,28 +13,28 @@ import java.util.stream.Collectors;
 //Here the generic type M is tells which model will be accessed as every method within this interface will be typed against it
 public interface AppStoreAccessor<M> {
 
-  Map<String, M> store();
+    Map<String, M> store();
 
-  //Simple CRUD ops
-  default List<M> getAll() {
-    return new ArrayList<>(store().values());
-  }
+    //Simple CRUD ops
+    default List<M> getAll() {
+        return new ArrayList<>(store().values());
+    }
 
-  default Optional<M> findOne(String id) {
-    return Optional.ofNullable(store().get(id));
-  }
+    default Optional<M> findOne(String id) {
+        return Optional.ofNullable(store().get(id));
+    }
 
-  M save(M data);
+    M save(M data);
 
-  default boolean remove(String id) {
-    return Optional.ofNullable(store().remove(id)).isPresent();
-  }
+    default boolean remove(String id) {
+        return Optional.ofNullable(store().remove(id)).isPresent();
+    }
 
-  //Since both service implementations have similar kind of filter functions, we can provide it here
-  default Function<Predicate<M>, List<M>> filteringFunction() {
-    return predicate -> getAll()
-        .stream()
-        .filter(predicate)
-        .collect(Collectors.toList());
-  }
+    //Since both service implementations have similar kind of filter functions, we can provide it here
+    default Function<Predicate<M>, List<M>> filteringFunction() {
+        return predicate -> getAll()
+                .stream()
+                .filter(predicate)
+                .collect(Collectors.toList());
+    }
 }

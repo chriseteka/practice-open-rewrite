@@ -15,45 +15,45 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/book")
 public class BookController {
-  
-  private final BookService bookService;
 
-  public BookController(BookService bookService) {
-    this.bookService = bookService;
-  }
-  
-  @GetMapping
-  public List<Book> allBooks() {
-    return bookService.getAll();
-  }
+    private final BookService bookService;
 
-  @GetMapping("/{id}")
-  public Optional<Book> singleBook(@PathVariable String id) {
-    return bookService.findOne(id);
-  }
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
+    }
 
-  @PostMapping
-  public Book saveBook(@RequestBody Book book) {
-    return bookService.save(book);
-  }
+    @GetMapping
+    public List<Book> allBooks() {
+        return bookService.getAll();
+    }
 
-  @DeleteMapping("/{id}")
-  public boolean removeBook(@PathVariable String id) {
-    return bookService.remove(id);
-  }
+    @GetMapping("/{id}")
+    public Optional<Book> singleBook(@PathVariable String id) {
+        return bookService.findOne(id);
+    }
 
-  @GetMapping("/with-authors-alive")
-  public List<Book> booksWithAuthorsAlive() {
-    return bookService.fetchAllBooksWithAuthorsAlive();
-  }
+    @PostMapping
+    public Book saveBook(@RequestBody Book book) {
+        return bookService.save(book);
+    }
 
-  @GetMapping("/with-no-co-author")
-  public List<Book> booksWithNoCoAuthors() {
-    return bookService.fetchAllBooksWithNoCoAuthors();
-  }
+    @DeleteMapping("/{id}")
+    public boolean removeBook(@PathVariable String id) {
+        return bookService.remove(id);
+    }
 
-  @GetMapping("/featured-in/{noOfAuthors}")
-  public List<Book> booksWithNoOfAuthors(@PathVariable Integer noOfAuthors) {
-    return bookService.fetchAllBooksWith(noOfAuthors);
-  }
+    @GetMapping("/with-authors-alive")
+    public List<Book> booksWithAuthorsAlive() {
+        return bookService.fetchAllBooksWithAuthorsAlive();
+    }
+
+    @GetMapping("/with-no-co-author")
+    public List<Book> booksWithNoCoAuthors() {
+        return bookService.fetchAllBooksWithNoCoAuthors();
+    }
+
+    @GetMapping("/featured-in/{noOfAuthors}")
+    public List<Book> booksWithNoOfAuthors(@PathVariable Integer noOfAuthors) {
+        return bookService.fetchAllBooksWith(noOfAuthors);
+    }
 }

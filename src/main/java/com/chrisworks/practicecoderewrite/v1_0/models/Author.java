@@ -15,21 +15,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Author {
 
-  private String id;
-  private String name;
-  private String email;
-  private LocalDate dateOfBirth;
-  private Set<Book> books = new HashSet<>();
+    private String id;
+    private String name;
+    private String email;
+    private LocalDate dateOfBirth;
+    private Set<Book> books = new HashSet<>();
 
-  public int authorAge() {
-    //Assume zero, if an age isn't provided
-    return Optional.ofNullable(dateOfBirth)
-        .map(dob -> Period.between(LocalDate.now(), dob).getYears())
-        .orElse(0);
-  }
+    public int authorAge() {
+        //Assume zero, if an age isn't provided
+        return Optional.ofNullable(dateOfBirth)
+                .map(dob -> Period.between(LocalDate.now(), dob).getYears())
+                .orElse(0);
+    }
 
-  //Naive impl, you are considered to be still alive if you are below 150
-  public boolean stillAlive() {
-    return authorAge() < 150;
-  }
+    //Naive impl, you are considered to be still alive if you are below 150
+    public boolean stillAlive() {
+        return authorAge() < 150;
+    }
 }

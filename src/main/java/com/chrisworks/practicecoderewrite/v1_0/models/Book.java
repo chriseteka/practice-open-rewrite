@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Book {
 
-  private String isbn;
-  private String title;
-  private Author mainAuthor;
-  private LocalDate publishYear;
-  private Set<Author> coAuthors = new HashSet<>();
+    private String isbn;
+    private String title;
+    private Author mainAuthor;
+    private LocalDate publishYear;
+    private Set<Author> coAuthors = new HashSet<>();
 }

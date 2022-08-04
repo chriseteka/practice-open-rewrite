@@ -16,44 +16,44 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/author")
 public class AuthorController {
 
-  private final AuthorService authorService;
+    private final AuthorService authorService;
 
-  public AuthorController(AuthorService authorService) {
-    this.authorService = authorService;
-  }
+    public AuthorController(AuthorService authorService) {
+        this.authorService = authorService;
+    }
 
-  @GetMapping
-  public List<Author> allAuthors() {
-    return authorService.getAll();
-  }
+    @GetMapping
+    public List<Author> allAuthors() {
+        return authorService.getAll();
+    }
 
-  @GetMapping("/{id}")
-  public Optional<Author> singleAuthor(@PathVariable String id) {
-    return authorService.findOne(id);
-  }
+    @GetMapping("/{id}")
+    public Optional<Author> singleAuthor(@PathVariable String id) {
+        return authorService.findOne(id);
+    }
 
-  @PostMapping
-  public Author saveAuthor(@RequestBody Author author) {
-    return authorService.save(author);
-  }
+    @PostMapping
+    public Author saveAuthor(@RequestBody Author author) {
+        return authorService.save(author);
+    }
 
-  @DeleteMapping("/{id}")
-  public boolean removeAuthor(@PathVariable String id) {
-    return authorService.remove(id);
-  }
+    @DeleteMapping("/{id}")
+    public boolean removeAuthor(@PathVariable String id) {
+        return authorService.remove(id);
+    }
 
-  @GetMapping("/alive")
-  public List<Author> livingAuthors() {
-    return authorService.fetchAllAuthorThatAreStillAlive();
-  }
+    @GetMapping("/alive")
+    public List<Author> livingAuthors() {
+        return authorService.fetchAllAuthorThatAreStillAlive();
+    }
 
-  @GetMapping("/older/{age}")
-  public List<Author> authorsOlderThan(@PathVariable Integer age) {
-    return authorService.fetchAllAuthorOlderThan(age);
-  }
+    @GetMapping("/older/{age}")
+    public List<Author> authorsOlderThan(@PathVariable Integer age) {
+        return authorService.fetchAllAuthorOlderThan(age);
+    }
 
-  @GetMapping("/featured-in/{noOfBooks}")
-  public List<Author> authorsFeaturedAtLeastIn(@PathVariable Integer noOfBooks) {
-    return authorService.fetchAllAuthorThatHaveFeaturedAtLeastIn(noOfBooks);
-  }
+    @GetMapping("/featured-in/{noOfBooks}")
+    public List<Author> authorsFeaturedAtLeastIn(@PathVariable Integer noOfBooks) {
+        return authorService.fetchAllAuthorThatHaveFeaturedAtLeastIn(noOfBooks);
+    }
 }

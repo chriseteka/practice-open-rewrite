@@ -8,10 +8,10 @@ import java.util.Map;
 //Say we define a simple class to mimic a DB
 public class AppStore {
 
-  public static final Map<String, Book> bookStore = new HashMap<>();
-  public static final Map<String, Author> authorStore = new HashMap<>();
+    public static final Map<String, Book> bookStore = new HashMap<>();
+    public static final Map<String, Author> authorStore = new HashMap<>();
 
-  //NB We may have chosen to use inheritance and ensure we have one Map as a Storage for both book and author
-  //In fact this is the next goal, we need to see how the re-write tool deals with inheritance.
+    //NB We may have chosen to use inheritance and ensure we have one Map as a Storage for both book and author
+    //In fact this is the next goal, we need to see how the re-write tool deals with inheritance.
 
 }
