@@ -4,7 +4,7 @@ This is intended to be a POC that show how we can leverage a tool like Open-rewr
 codebase running on old JDKs to new ones. The target is to start from java11 and see how we can push it to java17
 
 ## Start
-- [ ] Create a naive spring boot app running on Java11
+- [x] Create a naive spring boot app running on Java11
 - [ ] Start with the open re-write tool and apply the default implementation to update it a little
 - [ ] See how you can add your own rule and how open re-write can use that to update the code base
 - [ ] Maybe introduce other tools which traverses over an AST and produces something entirely different

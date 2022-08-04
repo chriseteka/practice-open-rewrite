@@ -52,7 +52,7 @@ public class BookController {
     return bookService.fetchAllBooksWithNoCoAuthors();
   }
 
-  @GetMapping("/{noOfAuthors}")
+  @GetMapping("/featured-in/{noOfAuthors}")
   public List<Book> booksWithNoOfAuthors(@PathVariable Integer noOfAuthors) {
     return bookService.fetchAllBooksWith(noOfAuthors);
   }

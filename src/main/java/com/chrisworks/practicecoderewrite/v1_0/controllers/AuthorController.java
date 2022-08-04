@@ -47,12 +47,12 @@ public class AuthorController {
     return authorService.fetchAllAuthorThatAreStillAlive();
   }
 
-  @GetMapping("/{age}")
+  @GetMapping("/older/{age}")
   public List<Author> authorsOlderThan(@PathVariable Integer age) {
     return authorService.fetchAllAuthorOlderThan(age);
   }
 
-  @GetMapping("/{noOfBooks}")
+  @GetMapping("/featured-in/{noOfBooks}")
   public List<Author> authorsFeaturedAtLeastIn(@PathVariable Integer noOfBooks) {
     return authorService.fetchAllAuthorThatHaveFeaturedAtLeastIn(noOfBooks);
   }
